@@ -17,12 +17,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // load assets
-app.use('/img', express.static(path.join(__dirname, 'public/img')));
-app.use('/css', express.static(path.join(__dirname, 'public/css')));
-app.use('/js', express.static(path.join(__dirname, 'public/js')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.send('App running....');
+    res.render('index');
 });
 
 app.listen(PORT, () => {

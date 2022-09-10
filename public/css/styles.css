@@ -1,3 +1,151 @@
-body {
-    box-sizing: border-box;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.o-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.c-header {
+  width: 100%;
+  margin-bottom: 80px;
+  padding: 20px 0;
+  background-color: #24f4b9;
+}
+
+.c-header a {
+  color: #2b2d42;
+}
+
+.c-header__nav {
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.c-main {
+  width: 100%;
+}
+
+.c-main__user {
+  margin-bottom: 40px;
+}
+
+.c-form {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.c-form__table {
+  width: 100%;
+  text-align: center;
+}
+
+.c-form__table thead tr, .c-form__table tbody tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0;
+  border-top: 1px solid #adb5bd;
+}
+
+.c-form__table th, .c-form__table td {
+  width: 16.67%;
+}
+
+.c-form__table th {
+  font-weight: 600;
+}
+
+.c-form__table__props {
+  color: #ffffff;
+  background-color: #2b2d42;
+}
+
+.c-form__table__values {
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.c-form__table__values:hover {
+  background-color: #24f4b9;
+}
+
+.c-form__table__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=styles.css.map */

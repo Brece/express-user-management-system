@@ -1,12 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- include header -->
+<%- include('partials/_header') %> 
+<!-- /include header -->
+
+<!-- Main Content -->
+<main class="c-main">
+    <div class="o-wrap">
+        <div class="c-main__user">
+            <a href="/add-user" class="c-main__user__link">
+                <span>New User <i class="fa-solid fa-user"></i></span>
+            </a>
+        </div>
+
+        <!-- Form handling -->
+        <form action="/" method="POST" class="c-form">
+            <table class="c-form__table">
+                <thead>
+                    <tr class="c-form__table__props">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>@Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="c-form__table__values">
+                        <td>1</td>
+                        <td>Username</td>
+                        <td>example@gmail.com</td>
+                        <td>Male</td>
+                        <td>Active</td>
+                        <td class="c-form__table__btns">
+                            <a href="#" class="c-btn c-btn--update">
+                                <span><i class="fa-solid fa-pen-to-square"></i></span>
+                            </a>
+                            <a href="#" class="c-btn c-btn--delete">
+                                <span><i class="fa-regular fa-circle-xmark"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
+<!-- /Main Content -->
+
+<!-- include footer -->
+<%- include('partials/_footer') %> 
+<!-- /include footer -->

@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'reset';
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.o-wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.c-header {
+    width: 100%;
+    margin-bottom: $vspace*4;
+    padding: $vspace 0;
+    background-color: #24f4b9;
+    a {
+        color: $color-dark;
+    }
+}
+.c-header__nav {
+    margin: 0 auto;
+    font-size: $font-size-medium;
+    font-weight: 600;
+    text-align: center;
+}
+
+.c-main {
+    width: 100%;
+}
+.c-main__user {
+    margin-bottom: $vspace*2;
+}
+
+.c-form {
+    width: 100%;
+    margin-bottom: $vspace*4;
+}
+.c-form__table {
+    width: 100%;
+    text-align: center;
+
+    thead tr, tbody tr {
+        display: flex;
+        justify-content: space-around;
+        padding: $vspace 0;
+        border-top: 1px solid $color-light;
+    }
+
+    th, td {
+        width: 16.67%;
+    }
+
+    th {
+        font-weight: 600;
+    }
+}
+.c-form__table__props {
+    color: #ffffff;
+    background-color: $color-dark;
+}
+.c-form__table__values {
+    transition: background-color .3s ease-in-out;
+    &:hover {
+        background-color: #24f4b9;
+    }
+}
+.c-form__table__btns {
+    display: flex;
+    justify-content: space-evenly;
+}
