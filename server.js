@@ -19,8 +19,13 @@ app.set('view engine', 'ejs');
 // load assets
 app.use(express.static(path.join(__dirname, 'public')));
 
+// TODO: routes
 app.get('/', (req, res) => {
     res.render('index');
+});
+
+app.get('/user/create', (req, res) => {
+    res.render('user_create');
 });
 
 app.listen(PORT, () => {
