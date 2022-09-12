@@ -93,6 +93,23 @@ a {
   color: #ffffff;
 }
 
+.c-btn--edit, .c-btn--delete {
+  border: none;
+}
+
+.c-btn--edit:hover, .c-btn--delete:hover {
+  background-color: #2b2d42;
+  color: #ffffff;
+}
+
+.c-btn--edit {
+  color: #2b2d42;
+}
+
+.c-btn--delete {
+  color: #ff1e22;
+}
+
 .c-header {
   width: 100%;
   margin-bottom: 80px;
@@ -153,6 +170,9 @@ a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px 0;
   border-top: 1px solid #adb5bd;
 }

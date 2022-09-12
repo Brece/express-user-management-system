@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+const router = require ('./server/routes/router');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8080;
@@ -19,14 +20,8 @@ app.set('view engine', 'ejs');
 // load assets
 app.use(express.static(path.join(__dirname, 'public')));
 
-// TODO: routes
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-app.get('/user/create', (req, res) => {
-    res.render('user_create');
-});
+// routes
+app.use(router);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}...`);

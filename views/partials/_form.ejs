@@ -1,0 +1,38 @@
+<form method="POST" class="c-form" id=<%= form_id %>>
+    <div class="c-form__user">
+        <div class="c-form__user__group">
+            <label for="name" class="c-form__user__group__label">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" id="name" name="name" value="" placeholder="John Doe">
+        </div>
+        <div class="c-form__user__group">
+            <label for="email" class="c-form__user__group__label">Email</label>
+            <input type="email" id="email" name="email" value="" placeholder="example@email.com">
+        </div>
+        <div class="c-form__user__group">
+            <label class="c-form__user__group__label">Gender</label>
+            <div class="c-form__user__group__option">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div class="c-form__user__group__option">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <div class="c-form__user__group">
+            <label class="c-form__user__group__label">Status</label>
+            <div class="c-form__user__group__option">
+                <input type="radio" id="active" name="status" value="active">
+                <label for="active">Active</label>
+            </div>
+            <div class="c-form__user__group__option">
+                <input type="radio" id="inactive" name="status" value="inactive">
+                <label for="inactive">Inactive</label>
+            </div>
+        </div>
+        <div class="c-form__user__group">
+            <button type="submit" class="c-btn c-btn--submit">Save</button>
+        </div>
+    </div>
+</form>
