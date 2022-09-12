@@ -7,6 +7,10 @@ const router = require ('./server/routes/router');
 require('dotenv').config();
 const PORT = process.env.PORT || 8080;
 
+// database
+const connectDB = require('./server/database/connection');
+connectDB();
+
 // log requests
 app.use(morgan('tiny'));
 
