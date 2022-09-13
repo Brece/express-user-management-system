@@ -1,33 +1,45 @@
-<form action="/users" method="POST" class="c-form" id=<%= form_id %>>
+<form action="<%= form_id == "user_create" ? "/api/users" : "" %>" method="POST>" class="c-form <%= form_id %>">
     <div class="c-form__user">
         <div class="c-form__user__group">
             <label for="name" class="c-form__user__group__label">Name</label>
-            <input type="hidden" name="id" value="">
-            <input type="text" id="name" name="name" value="" placeholder="John Doe">
+            <input type="hidden" name="id" value="<%= typeof user != 'undefined' ? user._id : "" %>">
+            <input type="text" id="name" name="name" value="<%= typeof user != 'undefined' ? user.name : "" %>" placeholder="John Doe" required>
         </div>
         <div class="c-form__user__group">
             <label for="email" class="c-form__user__group__label">Email</label>
-            <input type="email" id="email" name="email" value="" placeholder="example@email.com">
+            <input type="email" id="email" name="email" value="<%= typeof user != 'undefined' ? user.email : "" %>" placeholder="example@email.com" required>
         </div>
         <div class="c-form__user__group">
             <label class="c-form__user__group__label">Gender</label>
             <div class="c-form__user__group__option">
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="male" 
+                <% if(typeof user != 'undefined') { %>
+                    <%= user.gender == "male" ? "checked" : "" %>
+                <% } %>>
                 <label for="male">Male</label>
             </div>
             <div class="c-form__user__group__option">
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="female" 
+                <% if(typeof user != 'undefined') { %>
+                    <%= user.gender == "female" ? "checked" : "" %>
+                <% } %>>
                 <label for="female">Female</label>
             </div>
         </div>
         <div class="c-form__user__group">
             <label class="c-form__user__group__label">Status</label>
             <div class="c-form__user__group__option">
-                <input type="radio" id="active" name="status" value="active">
+                <input type="radio" id="active" name="status" value="active" 
+                <% if(typeof user != 'undefined') { %>
+                    <%= user.status == "active" ? "checked" : "" %>
+                <% } %>>
                 <label for="active">Active</label>
             </div>
             <div class="c-form__user__group__option">
-                <input type="radio" id="inactive" name="status" value="inactive">
+                <input type="radio" id="inactive" name="status" value="inactive" 
+                <% if(typeof user != 'undefined') { %>
+                    <%= user.status == "inactive" ? "checked" : "" %>
+                <% } %>>
                 <label for="inactive">Inactive</label>
             </div>
         </div>

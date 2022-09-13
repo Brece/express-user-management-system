@@ -1,14 +1,9 @@
 const axios = require('axios');
 
-exports.indexRoute = (req, res) => {
-    res.redirect('/users');
-}
-
 exports.homeRoute = (req, res) => {
     // make a get request to /users
-    axios.get('http://localhost:3000/users')
+    axios.get('http://localhost:3000/api/users')
         .then(function (response) {
-            console.log('xxx');
             res.render('index', { user_list: response.data });
         })
         .catch( err => {
@@ -21,5 +16,11 @@ exports.createRoute = (req, res) => {
 }
 
 exports.updateRoute = (req, res) => {
-    res.render('user_update');
+    axios.get('http://localhost:3000/api/users', { params: { id: req.query.id }})
+        .then(function (userdata) {
+            res.render('user_update', { user: userdata.data })
+        })
+        .catch( err => {
+            res.send(err);
+        });
 }

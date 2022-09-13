@@ -6,7 +6,7 @@
         <td><%= user_list[i].gender %></td>
         <td><%= user_list[i].status %></td>
         <td class="c-form__table__btns">
-            <a href="/user/update" class="c-btn c-btn--edit" title="Edit">
+            <a href="/user/update?id=<%= user_list[i]._id %>" class="c-btn c-btn--edit" title="Edit">
                 <span><i class="fa-solid fa-pen-to-square"></i></span>
             </a>
             <a href="#" class="c-btn c-btn--delete" title="Delete">
