@@ -22,9 +22,9 @@ router.get('/user/create', services.createRoute);
 router.get('/user/update', services.updateRoute);
 
 // API
-router.get('/user', userController.find);
-router.post('/user/create', userController.create);
-router.put('/user/:id', userController.update);
-router.delete('/user/:id', userController.delete);
+router.get('/users', userController.find);
+router.post('/users', userController.create);
+router.put('/users/:id', userController.update);
+router.delete('/users/:id', userController.delete);
 
 module.exports = router;

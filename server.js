@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const router = require ('./server/routes/router');
+const userRouter = require ('./server/routes/user');
+const indexRouter = require('./server/routes/index');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8080;
@@ -25,7 +26,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-app.use(router);
+//app.use(indexRouter);
+app.use(userRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}...`);

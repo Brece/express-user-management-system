@@ -48,8 +48,8 @@ exports.find = (req, res) => {
         
         User
         .find()
-        .then( user => {
-            res.send(user);
+        .then( user_list => {
+            res.send(user_list);
         })
         .catch( err => {
             res.status(500).send({ message: err.messsage || 'Error occured by getting the user information.'})
