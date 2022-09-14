@@ -7,6 +7,9 @@ if (formCreate !== null) {
     }
 }
 
+// the code below is not necessary and has been replaced by the package "method-override" for additional form methods
+
+/*
 if (formUpdate !== null) {
     formUpdate.onsubmit = (e) => {
         e.preventDefault();
@@ -19,21 +22,24 @@ if (formUpdate !== null) {
             let element = form.elements[key];
 
             if (element.type !== 'submit') {
+                if (element.type === 'radio' && !element.checked) {
+                    return;
+                }
                 data[element.name] = element.value;
             }
         });
 
-        console.log(data);
         // prepair request object
         let request = {
             'url': `http://localhost:3000/api/users/${data.id}`,
             'method': 'PUT',
-            'data': data,
+            'data': new FormData(form),
         };
 
         ajax(request);
     }
 }
+*/
 
 /**
  * Serialize all form data into an array
@@ -70,17 +76,9 @@ const ajax = (req) => {
     let xhr = new XMLHttpRequest();
     
     // making our connection
-    xhr.open(req.method, req.url, req.data, true);
-    xhr.setRequestHeader('Cache-Control', 'max-age=0');
-
-    // function executes after request is successful
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-        }
-    }
+    xhr.open(req.method, req.url, true);
     
     // sending our request
-    xhr.send();
+    xhr.send(req.data);
     alert('User was successfully edited.')
 }

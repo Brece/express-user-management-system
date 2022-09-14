@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const userRouter = require ('./server/routes/user');
 
 require('dotenv').config();
@@ -16,6 +17,9 @@ app.use(morgan('tiny'));
 
 // parse request to body
 app.use(express.urlencoded({ extended: false }));
+
+// removes the limitations of form methods (GET/POST), allows DELETE, PUT (update) functionality 
+app.use(methodOverride('_method'));
 
 // set view engine
 app.set('views', path.join(__dirname, 'views'));

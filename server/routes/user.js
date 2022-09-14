@@ -22,8 +22,8 @@ router.get('/user/create', services.createRoute);
 router.get('/user/update', services.updateRoute);
 
 // API
-router.get('/api/users', userController.find);
 router.post('/api/users', userController.create);
+router.get('/api/users', userController.find);
 router.put('/api/users/:id', userController.update);
 router.delete('/api/users/:id', userController.delete);
 

@@ -18,10 +18,9 @@ exports.create = (req, res) => {
 
     // save user
     user
-        .save(user)
+        .save()
         .then( data => {
-            // res.send(data);
-            res.redirect('/user/create');
+            res.redirect('/');
         })
         .catch( err => {
             res.status(500).send({ message: err.message || 'Some error occured while a create operation.'})
@@ -73,7 +72,7 @@ exports.update = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `Cannot update user with ID: ${id}. User not found.`})
             } else {
-                res.send(data);
+                res.redirect('/');
             }
         })
         .catch( err => {
