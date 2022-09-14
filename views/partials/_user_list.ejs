@@ -9,9 +9,12 @@
             <a href="/user/update?id=<%= user_list[i]._id %>" class="c-btn c-btn--edit" title="Edit">
                 <span><i class="fa-solid fa-pen-to-square"></i></span>
             </a>
-            <a href="#" class="c-btn c-btn--delete" title="Delete">
-                <span><i class="fa-regular fa-circle-xmark"></i></span>
-            </a>
+
+            <form action="/api/users/<%= user_list[i]._id %>?_method=DELETE" method="POST" class="user-delete">
+                <button type="submit" class="c-btn c-btn--delete" title="Delete">
+                    <span><i class="fa-regular fa-circle-xmark"></i></span>
+                </button>
+            </form>
         </td>
     </tr>
 <% } %> 

@@ -1,5 +1,17 @@
 const formCreate = document.querySelector('.user_create');
 const formUpdate = document.querySelector('.user_update');
+const deleteBtns = document.querySelectorAll('.c-btn--delete');
+
+deleteBtns.forEach( btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (confirm('Are you sure you want to DELETE this user?')) {
+            // traverse to form element
+            e.currentTarget.parentElement.submit();
+        }
+    });
+});
 
 if (formCreate !== null) {
     formCreate.onsubmit = (e) => {

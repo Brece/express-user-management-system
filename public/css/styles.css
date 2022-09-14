@@ -108,6 +108,7 @@ a {
 
 .c-btn--delete {
   color: #ff1e22;
+  background-color: transparent;
 }
 
 .c-header {
